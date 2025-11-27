@@ -1,55 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filme - Crunchyroll</title>
-    <link rel="shortcut icon" href="../img/icon_crunchyroll.png" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/media.css" />
-  </head>
 
-  <body>
-    <header class="cabecario">
-      <ul class="cabecario__lista">
-        <li>
-          <img src="../img/logo_crunchyroll.png" alt="Netflix logo" class="nlogo" /><img
-            src="../img/logo_crunchyroll.png"
-            alt="Netflix logo"
-            class="cabecario__item container__logo sumir__mobile"
-          />
-        </li>
-        <li class="cabecario__item">
-          <a href="./principal.html" class="cabecario__link">Início</a>
-        </li>
-        <li class="cabecario__item">
-          <a href="./principal.html" class="cabecario__link">Séries</a>
-        </li>
-        <li class="cabecario__item">
-          <a href="./principal.html" class="cabecario__link">Filmes</a>
-        </li>
-        <li class="cabecario__item mobile__sumir">
-          <a href="./principal.html" class="cabecario__link">Minha lista</a>
-        </li>
-      </ul>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filme - Disney+</title>
+  <link rel="shortcut icon"
+    href="https://static-assets.bamgrid.com/product/disneyplus/favicons/favicon.85cf084a56c734b2e819a609442a3b11.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/media.css" />
+</head>
 
-    <!--VÍDEO PARA SER ASSISTIDO-->
+<body>
+  <header class="cabecario">
+    <ul class="cabecario__lista">
+      <li>
+        <img
+          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FFA0BEBAC1406D88929497501C84019EBBA1B018D3F7C4C3C829F1810A24AD6E/scale?width=1440&aspectRatio=3.91&format=png"
+          alt="Disney+ logo" class="nlogo" /><img
+          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FFA0BEBAC1406D88929497501C84019EBBA1B018D3F7C4C3C829F1810A24AD6E/scale?width=1440&aspectRatio=3.91&format=png"
+          alt="Disney+ logo" class="cabecario__item container__logo sumir__mobile" />
+      </li>
+      <li class="cabecario__item">
+        <a href="./principal.html" class="cabecario__link">Início</a>
+      </li>
+      <li class="cabecario__item">
+        <a href="./principal.html" class="cabecario__link">Séries</a>
+      </li>
+      <li class="cabecario__item">
+        <a href="./principal.html" class="cabecario__link">Filmes</a>
+      </li>
+      <li class="cabecario__item mobile__sumir">
+        <a href="./principal.html" class="cabecario__link">Minha lista</a>
+      </li>
+    </ul>
+  </header>
 
-    <section class="filme">
-      <iframe
-        width="420"
-        height="315"
-        src="https://www.youtube.com/embed/l66G4nwLA0k"
-      >
-      </iframe>
-    </section>
+  <!--VÍDEO PARA SER ASSISTIDO-->
 
-    <!--RODAPE-->
+  <section class="filme">
+    <iframe id="trailer-iframe" width="420" height="315" src="https://www.youtube.com/embed/aV2DLkDPwM8"
+      allowfullscreen>
+    </iframe>
+  </section>
 
-    <footer class="rodape">
-      <h2 class="rodape__texto">Em breve mais informações</h2>
-    </footer>
-  </body>
+  <script>
+    // Pegar o parâmetro 'trailer' da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const trailerId = urlParams.get('trailer');
+
+    // Se houver um trailer ID, atualizar o iframe
+    if (trailerId) {
+      document.getElementById('trailer-iframe').src = 'https://www.youtube.com/embed/' + trailerId;
+    }
+  </script>
+
+  <!--RODAPE-->
+
+  <footer class="rodape">
+    <h2 class="rodape__texto">Em breve mais informações</h2>
+  </footer>
+</body>
+
 </html>
